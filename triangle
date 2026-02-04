@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class triangle{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        if(a + b > c && a + c > b && b + c > a) {
+            if(a == b && b == c) {
+                System.out.println("정삼각형");
+            }
+            else if(a == b || a == c || b == c) {
+                System.out.println("이등변삼각형");
+            }
+            else {
+                System.out.println("부등변삼각형");
+            }
+        }
+        else {
+            System.out.println("삼각형이 아님");
+        }
+    }
+}
