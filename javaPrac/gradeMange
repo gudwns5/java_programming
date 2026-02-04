@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class gradeMange {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int[][] scores = new int[num][3];
+        for(int i = 0; i < num; i++) {
+            for(int j = 0; j < 3; j++) {
+                scores[i][j] = sc.nextInt();
+            }
+        }
+        for(int i = 0; i < num; i++) {
+            int sum = scores[i][0] + scores[i][1] + scores[i][2];
+            double avg = (double)sum / 3;
+            System.out.printf("학생 %d 총점 : %d, 평균 %.2f\n", i, sum, avg);
+        }
+        for(int j = 0; j < 3; j++) {
+            int maxScore = scores[0][j];
+            int maxStudent = 0;
+            for(int i = 1; i < num; i++) {
+                if(maxScore < scores[i][j]) {
+                    maxScore = scores[i][j];
+                    maxStudent = i;
+                }
+            }
+            String subject = " ";
+            if(j == 0)
+                subject = "국어";
+            else if(j == 1)
+                subject = "영어";
+            else if(j == 2)
+                subject = "수학";
+            System.out.printf("%s 최고점 : %d, 학생 번호 %d\n", subject, maxScore, maxStudent);
+        }
+    }
+}
