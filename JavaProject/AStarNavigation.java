@@ -40,7 +40,7 @@ class AStarPanel extends JPanel {
     private enum SystemState { EDIT, RUN }
     private SystemState currentState = SystemState.EDIT;
 
-    // 장애물 넣을지 목적지 찍을지 고르는 모드
+    // 장애물을 넣을지 목적지를 찍을지 고르는 모드
     private enum EditMode { ADD_OBSTACLE, SET_GOAL }
     private EditMode currentEditMode = EditMode.ADD_OBSTACLE;
 
